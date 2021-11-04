@@ -61,9 +61,9 @@ office_09 = {"price": 34514,"rent": 320,"owner": False,"occupied": False,"addres
 office_10 = {"price": 55046,"rent": 320,"owner": False,"occupied": False,"address": "2522 Still Pastures Drive - Charlotte - 28202 | South Carolina"}
 
 # plusieurs firmes
-firm_01 = { "name": "Hammond, Williams and Weberans Sons","address": "492 Stone Court - Gardena - 90248 | California", "outlay": 0}
-firm_02 = { "name": "Rodriguez Inc - Ltd","address": "70163 Jacobs Rapids - West Lebanon - 03784 | New Hampshire", "outlay": 0}
-firm_03 = { "name":"Barrett Incand", "address":"56913 Mooney Port - Elk Grove - 95624 | California", "outlay":0}
-firm_04 = { "name":"Olson ans Sons Group", "address":"41124 Mitchell Park - Orlando - 32803 | Florida", "outlay":0}
-firm_05 = { "name":"Stephens-Reyes - PLC", "address":"5653 Farley Fall - Wenatchee - 98801 | Washington", "outlay":0}
-firm_06 = { "name":"Cordova - Inc", "address":"344 Gordon View - Lyndhurst - 07071 | New Jersey", "outlay":0}
+company_01 = { "name": "Hammond, Williams and Weberans Sons","address": "492 Stone Court - Gardena - 90248 | California", "outlay": 0}
+company_02 = { "name": "Rodriguez Inc - Ltd","address": "70163 Jacobs Rapids - West Lebanon - 03784 | New Hampshire", "outlay": 0}
+company_03 = { "name":"Barrett Incand", "address":"56913 Mooney Port - Elk Grove - 95624 | California", "outlay":0}
+company_04 = { "name":"Olson ans Sons Group", "address":"41124 Mitchell Park - Orlando - 32803 | Florida", "outlay":0}
+company_05 = { "name":"Stephens-Reyes - PLC", "address":"5653 Farley Fall - Wenatchee - 98801 | Washington", "outlay":0}
+company_06 = { "name":"Cordova - Inc", "address":"344 Gordon View - Lyndhurst - 07071 | New Jersey", "outlay":0}

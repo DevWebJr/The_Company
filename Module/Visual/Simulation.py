@@ -1,13 +1,11 @@
+from Module.Individual.Person import Person
 from Module.Individual.Employee import Employee
 from Module.Institution.Company import Company
-from Module.Individual.Person import Person
 from Module.Equipment.Car import Car
 from Module.Equipment.Office import Office
-from Module.Equipment.Furniture import Furnitures
-from Module.Display.Graph import BaseGraph, BalanceGraph
-from Module.Display.Graph import BalanceGraph
-from Module.ExceptionManager.ExceptionManager import PeriodOutOfScopeError
 from Module.Data.Datas import Datas
+from Module.Display.Graph import Graph
+from Module.ExceptionManager.ExceptionManager import PeriodOutOfScopeError
 
 import json
 import random
@@ -29,10 +27,10 @@ class Simulation():
     def load_data_company(self):
         datas = Datas()
         datas.initialisation()
-        return datas.list_company
+        return datas.list_of_companies
 
         # mise à jour des dépenses de chaque entreprise
-        #for company in list_company:
+        #for company in list_of_companies:
         #   company.update_outlay()
         # company.show_details()
 
@@ -48,111 +46,105 @@ class Simulation():
         else:
             return duration_int
 
-    # SIMULATION SUR 12 ITERATIONS - SYSTEM DE RATING
-
-    def Simulation(self, list_company, month):
-        for company in list_company:
-            pass
-        #graph1 = BalanceGraph(company.name)
-        #graph2 = BalanceGraph()
-        #graph3 = BalanceGraph
-
-        for company in list_company:
-            tab = []
-            tab2 = []
+    def Simulation(self, list_of_companies, month):
+        
+        for company in list_of_companies:
+            first_tab = []
+            second_tab = []
             for i in range(month + 1):
-                company.mix_workers()
+                company.simulate_score()
                 company.update_outlay()
                 company.update_income()
                 company.update_capital()
 
                 # company.show_details()
-                tab.append(company.capital)
-                tab2.append(i)
+                first_tab.append(company.capital)
+                second_tab.append(i)
 
-            final = BalanceGraph()
-            final.show(tab, tab2)
+            graph = Graph()
+            graph.show(first_tab, second_tab)
 
-    def refresh_file(self, list_company):
-        list_employee = []
-        list_company = []
-        list_person = []
-        list_car = []
-        list_office = []
-        with open("data.json") as my_file:
-            data = json.load(my_file)
+    def refresh_file(self, list_of_companies):
+        list_of_people = []
+        list_of_employees = []
+        list_of_companies = []
+        list_of_cars = []
+        list_of_offices = []
+        with open("datas.json") as file:
+            datas = json.load(file)
 
             # création d'une liste de bureaux d'entreprise
-            for company_office_dict in data['company_Office']:
-                for value in company_office_dict.values():
+            for company_offices_dict in datas['Office']:
+                for value in company_offices_dict.values():
                     for about in value:
                         office = Office(
-                            about["Name"], about["Price"], about["Owner"], about["Rent"])
-                        list_office.append(office)
+                            about["Price"], about["Rent"], about["Owner"], about["Occuppied"], about["Address"])
+                        list_of_offices.append(office)
 
             # création d'une liste de voitures de fonction
-            for company_car_dict in data['company_Car']:
-                for value in company_car_dict.values():
+            for company_cars_dict in datas['Car']:
+                for value in company_cars_dict.values():
                     for about in value:
-                        car = Car(about["Model"], about["Plate_Number"],
-                                  about["Price"], about["charge"], about["Owner"])
-                        list_car.append(car)
+                        car = Car(about["Price"], about["Rent"],
+                                  about["Owner"], about["Occupied"])
+                        list_of_cars.append(car)
 
             # création d'une liste de personnes hors entreprise
-            for person_dict in data['Person']:
-                for value in person_dict.values():
+            for people_dict in datas['Person']:
+                for value in people_dict.values():
                     for about in value:
-                        person = Person(about["LastName"], about["FirstName"], about["Age"], about["Adress"],
-                                        about["Phone"], about["Mail"])
-                        list_person.append(person)
+                        person = Person(about["LastName"], about["FirstName"], 
+                                        about["Gender"])
+                        list_of_people.append(person)
 
             # création d'une liste d'entreprises
-            for company_dict in data['Company']:
-                for value in company_dict.values():
+            for companies_dict in datas['Company']:
+                for value in companies_dict.values():
                     for about in value:
-                        company = Company(about["Name"])
-                        list_company.append(company)
+                        company = Company(
+                            about["Name"], about["Address"], about["Outlay"])
+                        list_of_companies.append(company)
 
             # création d'une liste d'employés
-            for employee_dict in data['Employee']:
-                for value in employee_dict.values():
+            for employees_dict in datas['Employee']:
+                for value in employees_dict.values():
                     for about in value:
-                        employee = Employee(about["LastName"], about["FirstName"], about["Age"], about["Adress"],
-                                            about["Phone"], about["Mail"], about["company_id"], about["Wage"],
-                                            about["company"])
-                        list_employee.append(employee)
+                        employee = Employee(about["LastName"], about["FirstName"], 
+                                            about["Gender"], about["Wage"], 
+                                            about["company"], about["company_id"])
+                        list_of_employees.append(employee)
 
         # Ajouter les employées, les bureaux et les voitures respectivement à chaque entreprise
-        for company in list_company:
-            for employee in list_employee:
+        for company in list_of_companies:
+            for employee in list_of_employees:
                 if employee.company == company.name:
                     company.hire(employee)
 
-            for office in list_office:
+            for office in list_of_offices:
                 if office.owner == company.name:
                     company.buy_office(office)
 
-            for car in list_car:
+            for car in list_of_cars:
                 if car.owner == company.name:
                     company.buy_car(car)
 
             company.update_outlay()
 
         # mise à jour des dépenses de chaque entreprise
-        for company in list_company:
+        for company in list_of_companies:
             company.update_outlay()
             # company.show_details()
 
-        return list_company
+        return list_of_companies
 
-    ###########################################################
-    ###| SIMULATION SUR 12 ITERATIONS - SYSTEME DE RATING |####
-    ###########################################################
+    ######################
+    ####| SIMULATION |####
+    ######################
 
-    def simulate(self, list_company, month):
-        for company in list_company:
-            tab = []
-            tab2 = []
+    def simulate(self, list_of_companies, month):
+        for company in list_of_companies:
+            first_tab = []
+            second_tab = []
             for i in range(month+1):
                 company.workers()
                 company.update_outlay()
@@ -160,8 +152,8 @@ class Simulation():
                 company.update_capital()
 
                 # company.show_details()
-                tab.append(company.capital)
-                tab2.append(i)
+                first_tab.append(company.capital)
+                second_tab.append(i)
 
-            final = BalanceGraph()
-            final.show(tab, tab2)
+            graph = Graph()
+            graph.show(first_tab, second_tab)
