@@ -86,9 +86,9 @@ class Employee(Person):
         return satisfaction
     
     def show_employee_details(self):
-        print(f"\nDétails Salarié :"
-            f"\nSalaire mensuel : {self.wage} €"
-            f"\nSatisfaction du PDG : {self.score}\n")
+        details = f"\nDétails Salarié :\n{self.last_name} {self.first_name}\n({self.get_gender_str()})\n{self.company}\nSalaire mensuel : {self.wage} €\nSatisfaction du PDG : {self.score}\n"
+        return details
+        
 
 
 class Boss(Employee):

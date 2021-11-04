@@ -70,15 +70,15 @@ class Company(Institution):
     ##all of lists##
     def show_employees(self):
         for employee in self.list_of_employees:
-            employee.show_details()
+            employee.show_employee_details()
 
     def show_offices(self):
         for office in self.list_of_offices:
-            office.show_details()
+            office.show_office_details()
 
     def show_cars(self):
         for car in self.list_of_cars:
-            car.show_details()
+            car.show_car_details()
 
     ##outlay##
     def update_outlay(self):
@@ -86,9 +86,9 @@ class Company(Institution):
         for employee in self.list_of_employees:
             value -= employee.wage
         for office in self.list_of_offices:
-            value -= office.cost
+            value -= office.price
         for car in self.list_of_cars:
-            value -= car.cost
+            value -= car.price
 
     ##income##
     def update_income(self, income):
