@@ -3,7 +3,7 @@ from Module.Equipment.Furniture import Furniture
 
 class Office(Furniture):
     def __init__(self, price, rent, owner, occupied, address):
-        Furniture.__init__(price, rent)
+        super().__init__(price, rent)
         self._owner = owner
         self._occupied = occupied
         self._address = address

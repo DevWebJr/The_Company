@@ -8,7 +8,7 @@ class Company(Institution):
     Cette classe héritée de la classe Institution permet l'instanciation de Company.
     """
     def __init__(self, name, address, outlay):
-        Institution.__init__(name, address)
+        super().__init__(name, address)
         self._outlay = outlay
         self._income = 0
         self._capital = 0
@@ -86,9 +86,9 @@ class Company(Institution):
         for employee in self.list_of_employees:
             value -= employee.wage
         for office in self.list_of_offices:
-            value -= office.price
+            value -= office.rent
         for car in self.list_of_cars:
-            value -= car.price
+            value -= car.rent
 
     ##income##
     def update_income(self, income):
@@ -96,7 +96,7 @@ class Company(Institution):
         
     ##capital##
     def update_capital(self):
-        self.capital = self.capital + self.income + self.outlay
+        self.capital = int(self.capital) + int(self.income) + int(self.outlay)
 
     ##employees##
     def hire(self, employee):

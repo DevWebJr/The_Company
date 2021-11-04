@@ -54,7 +54,7 @@ class Simulation():
             for i in range(month + 1):
                 company.simulate_score()
                 company.update_outlay()
-                company.update_income()
+                company.update_income(company.income)
                 company.update_capital()
 
                 # company.show_details()

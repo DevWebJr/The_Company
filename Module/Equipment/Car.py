@@ -3,7 +3,7 @@ from Module.Equipment.Furniture import Furniture
 
 class Car(Furniture):
     def __init__(self, price, rent, owner, occupied):
-        Furniture.__init__(price, rent)
+        super().__init__(price, rent)
         self._owner = owner
         self._occupied = occupied
         self._car_company = None

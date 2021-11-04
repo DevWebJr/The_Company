@@ -6,10 +6,10 @@ class Employee(Person):
     """
     Classe héritée de la Classe Person, permettant d'instancier des employées.
     """
-    def __init__(self, last_name, first_name, gender, wage, score, company, company_id):
-        Person.__init__(last_name, first_name, gender)
+    def __init__(self, last_name, first_name, gender, wage, company, company_id):
+        super().__init__(last_name, first_name, gender)
         self._wage = wage
-        self._score = score
+        self._score = 70
         self._company = company
         self._company_id = company_id
 
@@ -96,7 +96,7 @@ class Boss(Employee):
     Classe héritée de la Classe Employee, permettant d'instancier des Boss.
     """
     def __init__(self, last_name, first_name, gender, wage, score, company, company_id):
-        super().__init__(last_name, first_name, gender, wage, score, company, company_id)
+        Employee.__init__(last_name, first_name, gender, wage, score, company, company_id)
 
     """Methods"""
     def upgrade_wage(self, bonus, employee):

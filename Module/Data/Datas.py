@@ -56,22 +56,22 @@ class Datas():
 
     """Methods"""
     def initialisation(self):
-        self.get_people()
+        # self.get_people()
         self.get_employees()
         self.get_companies()
         self.get_cars()
         self.get_offices()
         self.load_object()
 
-    def get_people(self):
-        with open("all_datas.json") as my_file:
-            datas = json.load(my_file)
-            # création d'une liste de personnes hors entreprise
-            for person_dict in datas['Person']:
-                for value in person_dict.values():
-                    for about in value:
-                        person = Person(about["LastName"], about["FirstName"], about["Gender"])
-                        self.list_of_people.append(person)
+    # def get_people(self):
+    #     with open("all_datas.json") as my_file:
+    #         datas = json.load(my_file)
+    #         # création d'une liste de personnes hors entreprise
+    #         for person_dict in datas['Person']:
+    #             for value in person_dict.values():
+    #                 for about in value:
+    #                     person = Person(about["LastName"], about["FirstName"], about["Gender"])
+    #                     self.list_of_people.append(person)
 
     def get_employees(self):
         with open("all_datas.json") as my_file:
@@ -80,9 +80,7 @@ class Datas():
             for employee_dict in datas['Employee']:
                 for value in employee_dict.values():
                     for about in value:
-                        employee = Employee(about["LastName"], about["FirstName"], about["Gender"],
-                                            about["Wage"], about["Company"],
-                                            about["CompanyId"])
+                        employee = Employee(about["last_name"], about["first_name"], about["gender"], about["wage"], about["company"], about["company_id"])
                         self.list_of_employees.append(employee)
                         
     def get_companies(self):
@@ -92,7 +90,8 @@ class Datas():
             for firm_dict in datas['Company']:
                 for value in firm_dict.values():
                     for about in value:
-                        company = Company(about['Name'])
+                        company = Company(
+                            about['name'], about['address'], about['outlay'])
                         self.list_of_companies.append(company)
                         
     def get_cars(self):
@@ -102,9 +101,7 @@ class Datas():
             for firm_car_dict in datas['Car']:
                 for value in firm_car_dict.values():
                     for about in value:
-                        car = Car(
-                            about["Price"], about["Rent"],
-                            about["Owner"], about["Occupied"])
+                        car = Car(about["price"], about["rent"], about["owner"], about["occupied"])
                         self.list_of_cars.append(car)
 
     def get_offices(self):
@@ -114,9 +111,7 @@ class Datas():
             for firm_office_dict in datas['Office']:
                 for value in firm_office_dict.values():
                     for about in value:
-                        office = Office(
-                            about["Price"], about["Rent"],
-                            about["Owner"], about["Occupied"], about["Address"])
+                        office = Office(about["price"], about["rent"],about["owner"], about["occupied"], about["address"])
                         self.list_of_offices.append(office)
 
     def convert_file_to_json(self):
