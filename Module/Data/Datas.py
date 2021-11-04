@@ -64,7 +64,7 @@ class Datas():
         self.load_object()
 
     def get_people(self):
-        with open("datas.json") as my_file:
+        with open("all_datas.json") as my_file:
             datas = json.load(my_file)
             # création d'une liste de personnes hors entreprise
             for person_dict in datas['Person']:
@@ -74,7 +74,7 @@ class Datas():
                         self.list_of_people.append(person)
 
     def get_employees(self):
-        with open("datas.json") as my_file:
+        with open("all_datas.json") as my_file:
             datas = json.load(my_file)
             # création d'une liste d'employés
             for employee_dict in datas['Employee']:
@@ -86,7 +86,7 @@ class Datas():
                         self.list_of_employees.append(employee)
                         
     def get_companies(self):
-        with open("datas.json") as my_file:
+        with open("all_datas.json") as my_file:
             datas = json.load(my_file)
             # création d'une liste d'entreprises
             for firm_dict in datas['Company']:
@@ -96,7 +96,7 @@ class Datas():
                         self.list_of_companies.append(company)
                         
     def get_cars(self):
-        with open("datas.json") as my_file:
+        with open("all_datas.json") as my_file:
             datas = json.load(my_file)
             # création d'une liste de voitures de fonction
             for firm_car_dict in datas['Car']:
@@ -108,7 +108,7 @@ class Datas():
                         self.list_of_cars.append(car)
 
     def get_offices(self):
-        with open("datas.json") as my_file:
+        with open("all_datas.json") as my_file:
             datas = json.load(my_file)
             # création d'une liste de bureaux d'entreprise
             for firm_office_dict in datas['Office']:
@@ -120,7 +120,7 @@ class Datas():
                         self.list_of_offices.append(office)
 
     def convert_file_to_json(self):
-        with open("datas_.json", 'w', encoding='utf-8') as my_file:
+        with open("datas.json", 'w', encoding='utf-8') as my_file:
             datas = json.load(my_file)
             datas.dump(self)
 
