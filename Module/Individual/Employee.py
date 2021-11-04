@@ -63,7 +63,7 @@ class Employee(Person):
         self.company = company      
         self.company_id = company_id  
         
-    def join_a_company(self):
+    def quit_a_company(self):
         self.company = None
         
     def job_is_done(self):
