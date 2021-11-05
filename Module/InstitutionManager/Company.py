@@ -111,7 +111,7 @@ class Company(Institution):
             if target == employee:
                 self.list_of_employees.remove(employee)      
     
-    """return list of all availables cars"""
+    """return a list of all availables cars"""
     def get_list_of_availables_cars(self):
         availables_cars = []
         if self.list_of_cars != None:
@@ -119,14 +119,24 @@ class Company(Institution):
                 if car.has_owner() == False:
                     availables_cars.append(car)
         else:
-            print("Plus aucune voiture disponible.")
+            print("Aucune voiture dans la liste à ce jour.")
         return availables_cars
+    
+    """return a list of all unavailables cars"""
+    def get_list_of_unavailables_cars(self):
+        unavailables_cars = []
+        if self.list_of_cars != None:
+            for car in self.list_of_cars:
+                if car.has_owner() == True:
+                    unavailables_cars.append(car)
+        else:
+            print("Aucune voiture dans la liste à ce jour.")
+        return unavailables_cars
 
     """return a car using a random choice in list"""
-    def choose_car_in_list(self):
-        availables_cars = self.get_list_of_availables_cars()
-        numero = random.randrange(1, len(availables_cars))
-        car = availables_cars[numero]
+    def choose_car_in_list(self, list_of_cars):
+        numero = random.randrange(1, len(list_of_cars))
+        car = list_of_cars[numero]
         return car    
     
     """attribute one car to one employee"""
