@@ -1,11 +1,11 @@
-from Module.Institution.Company import Company
-from Module.Equipment.Office import Office
-from Module.Individual.Person import Person
-from Module.Individual.Employee import Employee
-from Module.Equipment.Car import Car
+from Module.InstitutionManager.Company import Company
+from Module.FurnitureManager.Office import Office
+from Module.FurnitureManager.Car import Car
+from Module.PeopleManager.Person import Person
+from Module.PeopleManager.Employee import Employee
 import json
 
-class Datas():
+class CompanyData():
     def __init__(self):
         self._list_of_people = []
         self._list_of_employees = []
@@ -61,7 +61,7 @@ class Datas():
         self.get_companies()
         self.get_cars()
         self.get_offices()
-        self.load_object()
+        self.load()
 
     # def get_people(self):
     #     with open("all_datas.json") as my_file:
@@ -114,12 +114,12 @@ class Datas():
                         office = Office(about["price"], about["rent"],about["owner"], about["occupied"], about["address"])
                         self.list_of_offices.append(office)
 
-    def convert_file_to_json(self):
+    def export_datas_to_json(self):
         with open("datas.json", 'w', encoding='utf-8') as my_file:
             datas = json.load(my_file)
             datas.dump(self)
 
-    def load_object(self):
+    def load(self):
         # Ajouter les employées, les bureaux et les voitures respectivement à chaque entreprise
         for company in self.list_of_companies:
             for employee in self.list_of_employees:

@@ -1,4 +1,4 @@
-from Module.Individual.Person import Person
+from Module.PeopleManager.Person import Person
 from Module.ExceptionManager.ExceptionManager import AccessRightError
 
 

@@ -1,9 +1,9 @@
-from Module.Individual.Person import Person
-from Module.Individual.Employee import Employee
-from Module.Institution.Company import Company
-from Module.Equipment.Car import Car
-from Module.Equipment.Office import Office
-from Module.Data.Datas import Datas
+from Module.PeopleManager.Person import Person
+from Module.PeopleManager.Employee import Employee
+from Module.InstitutionManager.Company import Company
+from Module.FurnitureManager.Car import Car
+from Module.FurnitureManager.Office import Office
+from Module.DataManager.CompanyData import CompanyData
 from Module.Display.Graph import Graph
 from Module.ExceptionManager.ExceptionManager import PeriodOutOfScopeError
 
@@ -25,7 +25,7 @@ class Simulation():
         self._id = value
 
     def load_data_company(self):
-        datas = Datas()
+        datas = CompanyData()
         datas.initialisation()
         return datas.list_of_companies
 
@@ -46,7 +46,7 @@ class Simulation():
         else:
             return duration_int
 
-    def Simulation(self, list_of_companies, month):
+    def start(self, list_of_companies, month):
         
         for company in list_of_companies:
             first_tab = []
@@ -64,7 +64,7 @@ class Simulation():
             graph = Graph()
             graph.show(first_tab, second_tab)
 
-    def refresh_file(self, list_of_companies):
+    def import_datas_from_json(self, list_of_companies):
         list_of_people = []
         list_of_employees = []
         list_of_companies = []
@@ -141,14 +141,14 @@ class Simulation():
     ####| SIMULATION |####
     ######################
 
-    def simulate(self, list_of_companies, month):
+    def test(self, list_of_companies, month):
         for company in list_of_companies:
             first_tab = []
             second_tab = []
             for i in range(month+1):
-                company.workers()
+                company.simulate_score()
                 company.update_outlay()
-                company.update_income(random.randint(6000, 10000))
+                company.update_income(random.randint(600, 1000))
                 company.update_capital()
 
                 # company.show_details()

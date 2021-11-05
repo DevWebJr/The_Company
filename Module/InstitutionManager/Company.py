@@ -1,5 +1,5 @@
-from Module.Institution.Institution import Institution
-from Module.Individual.Employee import Employee
+from Module.InstitutionManager.Institution import Institution
+from Module.PeopleManager.Employee import Employee
 import random
 
 

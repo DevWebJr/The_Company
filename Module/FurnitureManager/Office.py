@@ -1,4 +1,4 @@
-from Module.Equipment.Furniture import Furniture
+from Module.FurnitureManager.Furniture import Furniture
 
 
 class Office(Furniture):
