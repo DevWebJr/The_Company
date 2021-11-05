@@ -79,7 +79,7 @@ class Employee(Person):
         elif self.score < 40:
             satisfaction = False
             print("Pas Bien")
-            self.quit()
+            self.quit_a_company()
         else:
             satisfaction = True
             print("Rien")
