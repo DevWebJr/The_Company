@@ -1,4 +1,7 @@
+from re import split
 from Module.FunctionManager.Function import Function
+from Module.PeopleManager.Employee import Employee
+from Module.PeopleManager.Person import Person
 
 
 people = [{"last_name": "Fury", "first_name": "Nick", "gender": True,

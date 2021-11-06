@@ -3,7 +3,7 @@ class Person():
     This Class implements Person Objects.
     """
 
-    def __init__(self, last_name, first_name, gender):
+    def __init__(self, last_name:str ="", first_name:str ="", gender: bool = True):
         self._last_name = last_name
         self._first_name = first_name
         self._gender = gender
@@ -41,7 +41,7 @@ class Person():
             gender_str = f"Femme"
         return gender_str
 
-    def get_details(self):
-        gender_str = " Homme" if self.gender else "Femme"
+    def show_details(self):
+        gender_str = "Homme" if self.gender else "Femme"
         details = f"{self.last_name} {self.first_name} ({gender_str})"
         return details

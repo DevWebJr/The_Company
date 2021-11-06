@@ -1,12 +1,15 @@
+from faker import Faker
+import random
 from Module.PeopleManager.Person import Person
 from Module.ExceptionManager.ExceptionManager import AccessRightError
+
 
 
 class Employee(Person):
     """
     Classe héritée de la Classe Person, permettant d'instancier des employées.
     """
-    def __init__(self, last_name, first_name, gender, wage, company, company_id):
+    def __init__(self, last_name: str = "", first_name: str = "", gender: bool = True, wage:float=0, company=None, company_id:int=None):
         super().__init__(last_name, first_name, gender)
         self._wage = wage
         self._score = 70
@@ -46,7 +49,7 @@ class Employee(Person):
     def company_id(self, value):
         self._company_id = value
 
-    """Methods"""
+    """Methods"""    
     def modify_wage(self, amount, boss):
         if isinstance(boss, Boss):
             boss.upgrade_wage(amount, self)
