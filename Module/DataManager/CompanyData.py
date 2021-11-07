@@ -101,7 +101,7 @@ class CompanyData():
             for firm_car_dict in datas['Car']:
                 for value in firm_car_dict.values():
                     for about in value:
-                        car = Car(about["price"], about["rent"], about["owner"], about["occupied"])
+                        car = Car(about["price"], about["rent"], about["available"], about["owner"])
                         self.list_of_cars.append(car)
 
     def get_offices(self):
@@ -111,7 +111,8 @@ class CompanyData():
             for firm_office_dict in datas['Office']:
                 for value in firm_office_dict.values():
                     for about in value:
-                        office = Office(about["price"], about["rent"],about["owner"], about["occupied"], about["address"])
+                        office = Office(
+                            about["price"], about["rent"], about["available"], about["owner"], about["address"])
                         self.list_of_offices.append(office)
 
     def export_datas_to_json(self):

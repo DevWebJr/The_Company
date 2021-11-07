@@ -2,10 +2,8 @@ from Module.FurnitureManager.Furniture import Furniture
 
 
 class Office(Furniture):
-    def __init__(self, price, rent, owner, occupied, address):
-        super().__init__(price, rent)
-        self._owner = owner
-        self._occupied = occupied
+    def __init__(self, price, rent, available, address):
+        super().__init__(price, rent, available)
         self._address = address
 
     ###Getters & Setters###
@@ -18,14 +16,6 @@ class Office(Furniture):
         self._owner = value
 
     @property
-    def occupied(self):
-        return self._occupied
-
-    @occupied.setter
-    def occupied(self, value):
-        self._occupied = value
-
-    @property
     def address(self):
         return self._address
 
@@ -34,12 +24,6 @@ class Office(Furniture):
         self._address = value
 
     ###Methods###
-    def is_occupied(self, occupied: bool):
-        if occupied:
-            self.price = None
-        else:
-            self.price = int
-
     def show_office_details(self):
         details = f"\nDétails Bureau :\n{self.price}\n({self.rent}/mensuel)\nPropriétaire : {self.owner}\n({self.has_owner()})\n{self.address}"
         return details

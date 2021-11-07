@@ -78,15 +78,14 @@ class Simulation():
                 for value in company_offices_dict.values():
                     for about in value:
                         office = Office(
-                            about["Price"], about["Rent"], about["Owner"], about["Occuppied"], about["Address"])
+                            about["Price"], about["Rent"], about["Available"],, about["Owner"] about["Address"])
                         list_of_offices.append(office)
 
             # création d'une liste de voitures de fonction
             for company_cars_dict in datas['Car']:
                 for value in company_cars_dict.values():
                     for about in value:
-                        car = Car(about["Price"], about["Rent"],
-                                  about["Owner"], about["Occupied"])
+                        car = Car(about["Price"], about["Rent"], about["Available"], about["Owner"])
                         list_of_cars.append(car)
 
             # création d'une liste de personnes hors entreprise

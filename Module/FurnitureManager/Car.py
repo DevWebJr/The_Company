@@ -2,10 +2,8 @@ from Module.FurnitureManager.Furniture import Furniture
 
 
 class Car(Furniture):
-    def __init__(self, price, rent, owner, occupied):
-        super().__init__(price, rent)
-        self._owner = owner
-        self._occupied = occupied
+    def __init__(self, price, rent, available):
+        super().__init__(price, rent, available)
         self._car_company = None
 
     ###Getters & Setters###
@@ -16,14 +14,6 @@ class Car(Furniture):
     @price.setter
     def price(self, value):
         self._price = value
-
-    @property
-    def occupied(self):
-        return self._occupied
-
-    @occupied.setter
-    def occupied(self, value):
-        self._occupied = value
 
     @property
     def rent(self):
@@ -50,15 +40,7 @@ class Car(Furniture):
         self._car_company = value
 
     ###Methods###
-    def has_owner(self):
-        if self.owner is None:
-            print("Ce véhicule n'a pas de propriétaire.")
-            return False
-        else:
-            print("{self.owner}")
-            return True
-
-    def car_company(self, company):
+    def sold_to_a_company(self, company):
         self._car_company = company.name
         company.list_of_cars.append(self)
 

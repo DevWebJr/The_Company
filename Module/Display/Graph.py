@@ -4,12 +4,21 @@ import matplotlib.pyplot as schema
 
 class Graph():
     def __init__(self):
+        self._id= id
         self._title = "Graph title"
         self._x_label = "X-axis label"
         self._y_label = "X-axis label"
         self._show_grid = True
 
     """Getters & Setters"""
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
+
     @property
     def title(self):
         return self._title

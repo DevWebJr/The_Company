@@ -26,22 +26,22 @@
         {"6": [{"name":"Cordova - Inc", "address":"344 Gordon View - Lyndhurst - 07071 | New Jersey", "outlay":220}]}
    ],
    "Car": [
-        {"1": [{"price": 4500,"rent": 50,"owner": false, "occupied": false}]},
-        {"2": [{"price": 3250,"rent": 50,"owner": false, "occupied": false}]},
-        {"3": [{"price": 7690,"rent": 50,"owner": false, "occupied": false}]},
-        {"4": [{"price": 4609,"rent": 50,"owner": false, "occupied": false}]},
-        {"5": [{"price": 3284,"rent": 50,"owner": false, "occupied": false}]}
+        {"1": [{"price": 4500,"rent": 50,"available": false, "owner": false}]},
+        {"2": [{"price": 3250,"rent": 50,"available": false, "owner": false}]},
+        {"3": [{"price": 7690,"rent": 50,"available": false, "owner": false}]},
+        {"4": [{"price": 4609,"rent": 50,"available": false, "owner": false}]},
+        {"5": [{"price": 3284,"rent": 50,"available": false, "owner": false}]}
    ],
    "Office": [
-        {"1": [{"price": 22690,"rent": 320,"owner": false, "occupied": false,"address": "48 Kerry Way - Gardena - 90248 | California"}]},
-        {"2": [{"price": 33045,"rent": 320,"owner": false, "occupied": false,"address": "684 Grasselli Street - West Lebanon - 03784 | New Hampshire"}]},
-        {"3": [{"price": 52896,"rent": 320,"owner": false, "occupied": false,"address": "3460 Highland View Drive - Elk Grove - 95624 | California"}]},
-        {"4": [{"price": 34514,"rent": 320,"owner": false, "occupied": false,"address": "3767 Ocala Street - Orlando - 32803 | Florida"}]},
-        {"5": [{"price": 34514,"rent": 320,"owner": false, "occupied": false,"address": "1526 Calico Drive - Wenatchee - 98801 | Washington"}]},
-        {"6": [{"price": 55046,"rent": 320,"owner": false, "occupied": false,"address": "4652 Pennsylvania Avenue - Lyndhurst - 07071 | New Jersey"}]},
-        {"7": [{"price": 33045,"rent": 320,"owner": false, "occupied": false,"address": "3369 Prospect Street - Perkins - 63774 | Missouri"}]},
-        {"8": [{"price": 52896,"rent": 320,"owner": false, "occupied": false,"address": "558 Caldwell Road - Buffalo - 14216 | New York"}]},
-        {"9": [{"price": 34514,"rent": 320,"owner": false, "occupied": false,"address": "1306 Doe Meadow Drive - Beltsville - 20705 | Maryland"}]},
-        {"10": [{"price": 55046,"rent": 320,"owner": false, "occupied": false,"address": "2522 Still Pastures Drive - Charlotte - 28202 | South Carolina"}]}  
+        {"1": [{"price": 22690,"rent": 320,"available": false, "owner": false,"address": "48 Kerry Way - Gardena - 90248 | California"}]},
+        {"2": [{"price": 33045,"rent": 320,"available": false, "owner": false,"address": "684 Grasselli Street - West Lebanon - 03784 | New Hampshire"}]},
+        {"3": [{"price": 52896,"rent": 320,"available": false, "owner": false,"address": "3460 Highland View Drive - Elk Grove - 95624 | California"}]},
+        {"4": [{"price": 34514,"rent": 320,"available": false, "owner": false,"address": "3767 Ocala Street - Orlando - 32803 | Florida"}]},
+        {"5": [{"price": 34514,"rent": 320,"available": false, "owner": false,"address": "1526 Calico Drive - Wenatchee - 98801 | Washington"}]},
+        {"6": [{"price": 55046,"rent": 320,"available": false, "owner": false,"address": "4652 Pennsylvania Avenue - Lyndhurst - 07071 | New Jersey"}]},
+        {"7": [{"price": 33045,"rent": 320,"available": false, "owner": false,"address": "3369 Prospect Street - Perkins - 63774 | Missouri"}]},
+        {"8": [{"price": 52896,"rent": 320,"available": false, "owner": false,"address": "558 Caldwell Road - Buffalo - 14216 | New York"}]},
+        {"9": [{"price": 34514,"rent": 320,"available": false, "owner": false,"address": "1306 Doe Meadow Drive - Beltsville - 20705 | Maryland"}]},
+        {"10": [{"price": 55046,"rent": 320,"available": false, "owner": false,"address": "2522 Still Pastures Drive - Charlotte - 28202 | South Carolina"}]}  
    ]
 }

@@ -4,11 +4,20 @@ class Person():
     """
 
     def __init__(self, last_name:str ="", first_name:str ="", gender: bool = True):
+        self._id = id
         self._last_name = last_name
         self._first_name = first_name
         self._gender = gender
 
     """Getters & Setters"""
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
+        
     @property
     def last_name(self):
         return self._last_name
@@ -41,7 +50,7 @@ class Person():
             gender_str = f"Femme"
         return gender_str
 
-    def show_details(self):
+    def show_person_details(self):
         gender_str = "Homme" if self.gender else "Femme"
         details = f"{self.last_name} {self.first_name} ({gender_str})"
         return details

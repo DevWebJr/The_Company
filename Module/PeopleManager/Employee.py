@@ -63,8 +63,11 @@ class Employee(Person):
             raise AccessRightError("Only a boss can be so generous.")
 
     def join_a_company(self, company, company_id):
-        self.company = company      
-        self.company_id = company_id  
+        if self.company != None:
+            self.company = company      
+            self.company_id = company_id
+        else:
+            print(f"Employé par {company.name}")
         
     def quit_a_company(self):
         self.company = None
@@ -76,7 +79,7 @@ class Employee(Person):
         self.score -= 5
     
     def check_score(self):
-        if self.score > 100:
+        if self.score > 80:
             satisfaction = True
             print("Bien")
         elif self.score < 40:
