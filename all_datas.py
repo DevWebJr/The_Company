@@ -42,23 +42,23 @@ employee_15 = { "last_name": "Stone", "first_name": "Victor", "gender": True,
 #     employee_10, employee_11, employee_12, employee_13, employee_14, employee_15]}
 
 # plusieurs voitures
-car_01 = {"price": 4500,"rent": 50,"available": False, "owner": False}
-car_02 = {"price": 3250,"rent": 50,"available": False, "owner": False}
-car_03 = {"price": 7690,"rent": 50,"available": False, "owner": False}
-car_04 = {"price": 4609,"rent": 50,"available": False, "owner": False}
-car_05 = {"price": 3284,"rent": 50,"available": False, "owner": False}
+car_01 = {"price": 4500,"rent": 50,"available": False}
+car_02 = {"price": 3250,"rent": 50,"available": False}
+car_03 = {"price": 7690,"rent": 50,"available": False}
+car_04 = {"price": 4609,"rent": 50,"available": False}
+car_05 = {"price": 3284,"rent": 50,"available": False}
 
 # plusieurs bureaux
-office_01 = {"price": 22690,"rent": 320,"available": False,"owner": False,"address": "48 Kerry Way - Gardena - 90248 | California"}
-office_02 = {"price": 33045,"rent": 320,"available": False,"owner": False,"address": "684 Grasselli Street - West Lebanon - 03784 | New Hampshire"}
-office_03 = {"price": 52896,"rent": 320,"available": False,"owner": False,"address": "3460 Highland View Drive - Elk Grove - 95624 | California"}
-office_04 = {"price": 34514,"rent": 320,"available": False,"owner": False,"address": "3767 Ocala Street - Orlando - 32803 | Florida"}
-office_05 = {"price": 34514,"rent": 320,"available": False,"owner": False,"address": "1526 Calico Drive - Wenatchee - 98801 | Washington"}
-office_06 = {"price": 55046,"rent": 320,"available": False,"owner": False,"address": "4652 Pennsylvania Avenue - Lyndhurst - 07071 | New Jersey"}
-office_07 = {"price": 33045,"rent": 320,"available": False,"owner": False,"address": "3369 Prospect Street - Perkins - 63774 | Missouri"}
-office_08 = {"price": 52896,"rent": 320,"available": False,"owner": False,"address": "558 Caldwell Road - Buffalo - 14216 | New York"}
-office_09 = {"price": 34514,"rent": 320,"available": False,"owner": False,"address": "1306 Doe Meadow Drive - Beltsville - 20705 | Maryland"}
-office_10 = {"price": 55046,"rent": 320,"available": False,"owner": False,"address": "2522 Still Pastures Drive - Charlotte - 28202 | South Carolina"}
+office_01 = {"price": 22690,"rent": 320,"available": False,"address": "48 Kerry Way - Gardena - 90248 | California"}
+office_02 = {"price": 33045,"rent": 320,"available": False,"address": "684 Grasselli Street - West Lebanon - 03784 | New Hampshire"}
+office_03 = {"price": 52896,"rent": 320,"available": False,"address": "3460 Highland View Drive - Elk Grove - 95624 | California"}
+office_04 = {"price": 34514,"rent": 320,"available": False,"address": "3767 Ocala Street - Orlando - 32803 | Florida"}
+office_05 = {"price": 34514,"rent": 320,"available": False,"address": "1526 Calico Drive - Wenatchee - 98801 | Washington"}
+office_06 = {"price": 55046,"rent": 320,"available": False,"address": "4652 Pennsylvania Avenue - Lyndhurst - 07071 | New Jersey"}
+office_07 = {"price": 33045,"rent": 320,"available": False,"address": "3369 Prospect Street - Perkins - 63774 | Missouri"}
+office_08 = {"price": 52896,"rent": 320,"available": False,"address": "558 Caldwell Road - Buffalo - 14216 | New York"}
+office_09 = {"price": 34514,"rent": 320,"available": False,"address": "1306 Doe Meadow Drive - Beltsville - 20705 | Maryland"}
+office_10 = {"price": 55046,"rent": 320,"available": False,"address": "2522 Still Pastures Drive - Charlotte - 28202 | South Carolina"}
 
 # plusieurs firmes
 company_01 = { "name": "Hammond, Williams and Weberans Sons","address": "492 Stone Court - Gardena - 90248 | California", "outlay": 0}

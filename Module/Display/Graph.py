@@ -3,11 +3,12 @@ import matplotlib.pyplot as schema
 
 
 class Graph():
-    def __init__(self):
+    def __init__(self, title: str = "", x_label: str = "", y_label: str = "", figsize=(int, int)):
         self._id= id
-        self._title = "Graph title"
-        self._x_label = "X-axis label"
-        self._y_label = "X-axis label"
+        self._title = title
+        self._x_label = x_label
+        self._y_label = y_label
+        self._figsize = figsize
         self._show_grid = True
 
     """Getters & Setters"""
@@ -52,9 +53,14 @@ class Graph():
         self._show_grid = value
 
     """Methods"""
-    def show(self, x_values, y_values):
+
+    def show(self, x_values, y_values, title):
+
+
+        schema.figure(figsize=(12, 8))
         #values of x and y
-        schema.plot(y_values, x_values)
+        schema.plot(y_values, x_values, c="green", lw=3.5)
+        schema.title(title)
         schema.xlabel(self._x_label)
         schema.ylabel(self._y_label)
         schema.title(self._title)

@@ -6,4 +6,4 @@ if __name__ == '__main__':
     simulation = Simulation()
     duration = simulation.choose_duration()
     list_of_of_companies = simulation.load_data_company()
-    simulation.test(list_of_of_companies, duration)
+    simulation.start(list_of_of_companies, duration)

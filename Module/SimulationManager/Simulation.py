@@ -61,8 +61,13 @@ class Simulation():
                 first_tab.append(company.capital)
                 second_tab.append(i)
 
-            graph = Graph()
-            graph.show(first_tab, second_tab)
+            title = f"{company.name}"
+            x_label = f"étude réalisée ur une période de {int(month)} mois"
+            y_label = "Capital"
+            figsize = (10, 8)
+            graph = Graph(title, x_label, y_label, figsize)
+            name = company.name
+            graph.show(first_tab, second_tab, name)
 
     def import_datas_from_json(self, list_of_companies):
         list_of_people = []
@@ -78,7 +83,7 @@ class Simulation():
                 for value in company_offices_dict.values():
                     for about in value:
                         office = Office(
-                            about["Price"], about["Rent"], about["Available"],, about["Owner"] about["Address"])
+                            about["Price"], about["Rent"], about["Available"], about["Owner"], about["Address"])
                         list_of_offices.append(office)
 
             # création d'une liste de voitures de fonction
@@ -140,19 +145,19 @@ class Simulation():
     ####| SIMULATION |####
     ######################
 
-    def test(self, list_of_companies, month):
-        for company in list_of_companies:
-            first_tab = []
-            second_tab = []
-            for i in range(month+1):
-                company.simulate_score()
-                company.update_outlay()
-                company.update_income(random.randint(600, 1000))
-                company.update_capital()
+    # def test(self, list_of_companies, month):
+    #     for company in list_of_companies:
+    #         first_tab = []
+    #         second_tab = []
+    #         for i in range(month+1):
+    #             company.simulate_score()
+    #             company.update_outlay()
+    #             company.update_income(random.randint(600, 1000))
+    #             company.update_capital()
 
-                # company.show_details()
-                first_tab.append(company.capital)
-                second_tab.append(i)
+    #             # company.show_details()
+    #             first_tab.append(company.capital)
+    #             second_tab.append(i)
 
-            graph = Graph()
-            graph.show(first_tab, second_tab)
+    #         graph = Graph()
+    #         graph.show(first_tab, second_tab, company.name)
