@@ -61,8 +61,8 @@ class Simulation():
                 first_tab.append(company.capital)
                 second_tab.append(i)
 
-            title = f"{company.name}"
-            x_label = f"étude réalisée ur une période de {int(month)} mois"
+            title = f"{company.name.upper()}"
+            x_label = f"Étude réalisée sur une période de {int(month)} mois"
             y_label = "Capital"
             figsize = (10, 8)
             graph = Graph(title, x_label, y_label, figsize)
@@ -140,24 +140,3 @@ class Simulation():
             # company.show_details()
 
         return list_of_companies
-
-    ######################
-    ####| SIMULATION |####
-    ######################
-
-    # def test(self, list_of_companies, month):
-    #     for company in list_of_companies:
-    #         first_tab = []
-    #         second_tab = []
-    #         for i in range(month+1):
-    #             company.simulate_score()
-    #             company.update_outlay()
-    #             company.update_income(random.randint(600, 1000))
-    #             company.update_capital()
-
-    #             # company.show_details()
-    #             first_tab.append(company.capital)
-    #             second_tab.append(i)
-
-    #         graph = Graph()
-    #         graph.show(first_tab, second_tab, company.name)

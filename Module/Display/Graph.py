@@ -65,7 +65,13 @@ class Graph():
         schema.ylabel(self._y_label)
         schema.title(self._title)
         schema.grid(self._show_grid)
-        
+
+        """afficher en mode plein écran"""
+        full_screen = schema.get_current_fig_manager()
+        ### works on Ubuntu??? >> did NOT working on windows
+        # full_screen.resize(*full_screen.window.maxsize())
+        full_screen.window.state('zoomed')  # works fine on Windows!
+                
         schema.show()
 
     def xy_values(self, zones):

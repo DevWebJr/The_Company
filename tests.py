@@ -57,3 +57,4 @@ plt.ylabel("axe y")
 plt.legend()
 plt.show()      
 # plt.savefig("figure_1.png")
+
